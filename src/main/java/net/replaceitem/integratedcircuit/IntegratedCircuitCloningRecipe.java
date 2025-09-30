@@ -1,6 +1,7 @@
 package net.replaceitem.integratedcircuit;
 
 import net.minecraft.component.ComponentType;
+import net.minecraft.component.DataComponentTypes;
 import net.minecraft.component.type.NbtComponent;
 import net.minecraft.item.ItemStack;
 import net.minecraft.recipe.RecipeSerializer;
@@ -67,6 +68,7 @@ public class IntegratedCircuitCloningRecipe extends SpecialCraftingRecipe {
 
             ItemStack craftedStack = dest.copyWithCount(1);
             craftedStack.set(CLONED_COMPONENT, source.get(CLONED_COMPONENT));
+            craftedStack.set(DataComponentTypes.CUSTOM_NAME, source.get(DataComponentTypes.CUSTOM_NAME));
             return craftedStack;
         }
         return ItemStack.EMPTY;
